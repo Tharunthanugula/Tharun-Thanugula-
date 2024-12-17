@@ -48,7 +48,7 @@ public class TicTacToe {
             }
         }
 
-        // Close scanner
+        
         scanner.close();
     }
 
@@ -91,7 +91,7 @@ public class TicTacToe {
 
     
     private static boolean checkWin() {
-        // Check rows, columns, and diagonals
+        
         return (checkRows() || checkColumns() || checkDiagonals());
     }
 
