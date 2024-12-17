@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta <charset="UTF-8">
+    <meta http-equiv="x-UA-compatible" content="IF=edge">
+    <meta name="view port" "content  width=device-width initial-scale=1.0">
+    <title> DOCUMENT</title>
+    </head>
+    <body>
+      <form action="index.php"method="post" >
+        <fieldset>
+        <legend>PERSONAL INFORMATION</legend>
+        <label for="username">username:</label>
+        <input type="text" id="username" minlenght="6" maxlenght="16" required>
+        <input type="reset"><br>
+        <label for="">Password</label>
+        <input type="password" id="password"><br>
+        <label for="password" id="password" minlenght="6" maxlenght="18" required></label>
+        <label for="Resume">upload Resume</label>
+        <input type="file" id="Resume" name="resume" accept=".jpeg,.png,.jpg"><br>
+        <label for="dob">Date of birth:</label>
+        <input type="date" id="dob" name="dob"><br>
+        <label for="color">favourite color:</label>
+        <input type="color" id="color" name="color" value="#ff0000"><br>
+        <label for="email">email</label>
+        <input type="email" id="email" placeholder="ssquarepants@gmail.com" required><br>  
+        <label for="gender">Gender</label><br>
+        <input type="radio" name="gender" id="male" value="male"><label for="male">male</label> 
+        <input type="radio" name="gender" id="female" value="female">  <label for="female">female</label>
+        <input type="radio" name="gender" id="others" value="others">  <label for="others">others</label><br><br><br>
+        <label for="phone no">phone no</label>
+        <input type="tel no" id="phone no" placeholder="123-456-7890" required><br>
+        <label for="bday">birthday</label>
+        <input type="date" id="bday"><br>
+        <label for="quantity">quantity</label>
+        <input type="number" id="quantity" min="0" max="99" value="1"><br>
+        <label for="title">title</label>
+        <label for="mr.">mr.</label>
+        <input type="radio" id="mr." value="mr." name="title"><br>
+        <label for="ms.">ms.</label>
+        <input type="radio" id="ms." value="ms." name="title"><br>
+        <label for="phd.">phd.</label></label> 
+        <input type="radio" id="phd." value="phd." name="title"><br>
+        <label for="Courses">courses</label>
+        <select id="courses">
+          <option value="CSM">CSM</option>
+          <option value="ECE">ECE</option>
+          <option value="CSE">CSE</option>
+        </select><br>
+        <label for="payment">payment</label>
+        <select id="payment">
+          <option value="visa">visa</option> 
+
+          <option value="mastercard">mastercard</option>
+          <option value="giftcard">giftcard</option>
+        </select>
+        <label for="subscribe">sunscribe</label>
+        <input type="checkbox" id="sunscribe"><br>
+        <label for="bio">BIO</label>
+        <textarea id="BIO" cols="40" rows="10" placeholder="write about urself"></textarea><br><br><br><br><br>
+        <label for="comment">comment</label>
+        <textarea id="comment" rows="3" cols="25"></textarea>
+        <label for="file">file</label>
+        <input type="file" id="file" accept="image/png,image/jpeg"><br>
+        <input type="checkbox" name="hobbies" id="travelling" value="travelling"> <label for="travelling">Travel</label>
+        <input type="checkbox" name="hobbies" id="singing" value="singing"><label for="singing">singing hobbie</label>
+        </fieldset>
+        <input type="submit"><br>
+        </form>
+        </body>
+        </html>
+        
