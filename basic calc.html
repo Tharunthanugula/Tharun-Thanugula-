@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+        }
+        .calculator input[type="text"] {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 20px;
+            text-align: right;
+            font-size: 1.5rem;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .calculator button {
+            width: 70px;
+            height: 50px;
+            margin: 5px;
+            font-size: 1.2rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .calculator button:hover {
+            background: #0056b3;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <div class="row">
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="setOperator('+')">+</button>
+        </div>
+        <div class="row">
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="setOperator('-')">-</button>
+        </div>
+        <div class="row">
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="setOperator('*')">&times;</button>
+        </div>
+        <div class="row">
+            <button onclick="clearResult()">C</button>
+            <button onclick="appendValue('0')">0</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="setOperator('/')">&divide;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentValue = '';
+        let operator = '';
+        let previousValue = '';
+
+        function appendValue(value) {
+            currentValue += value;
+            document.getElementById('result').value = currentValue;
+        }
+
+        function setOperator(op) {
+            if (currentValue === '') return;
+            operator = op;
+            previousValue = currentValue;
+            currentValue = '';
+        }
+
+        function calculateResult() {
+            if (previousValue === '' || currentValue === '' || operator === '') return;
+            let result;
+            const prev = parseFloat(previousValue);
+            const curr = parseFloat(currentValue);
+            switch (operator) {
+                case '+':
+                    result = prev + curr;
+                    break;
+                case '-':
+                    result = prev - curr;
+                    break;
+                case '*':
+                    result = prev * curr;
+                    break;
+                case '/':
+                    result = curr !== 0 ? prev / curr : 'Error';
+                    break;
+                default:
+                    return;
+            }
+            document.getElementById('result').value = result;
+            currentValue = result;
+            operator = '';
+            previousValue = '';
+        }
+
+        function clearResult() {
+            currentValue = '';
+            operator = '';
+            previousValue = '';
+            document.getElementById('result').value = '';
+        }
+    </script>
+</body>
+</html>
